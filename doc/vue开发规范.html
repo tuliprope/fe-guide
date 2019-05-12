@@ -1,0 +1,1072 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>vue开发规范 · 前端开发规范</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="周瑜">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="前端最佳实践.html" />
+    
+    
+    <link rel="prev" href="javascript开发规范.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="javascript开发规范.html">
+            
+                <a href="javascript开发规范.html">
+            
+                    
+                    javascript开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="vue开发规范.html">
+            
+                <a href="vue开发规范.html">
+            
+                    
+                    vue开发规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="前端最佳实践.html">
+            
+                <a href="前端最佳实践.html">
+            
+                    
+                    前端最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >vue开发规范</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="vue&#x5F00;&#x53D1;&#x89C4;&#x8303;">vue&#x5F00;&#x53D1;&#x89C4;&#x8303;</h2>
+<h3 id="&#x7EC4;&#x4EF6;&#x6570;&#x636E;">&#x7EC4;&#x4EF6;&#x6570;&#x636E;</h3>
+<blockquote>
+<p>&#x7EC4;&#x4EF6;&#x7684; data &#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x5F53;&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; data &#x5C5E;&#x6027;&#x7684;&#x65F6;&#x5019; (&#x9664;&#x4E86; new Vue &#x5916;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;)&#xFF0C;&#x5B83;&#x7684;&#x503C;&#x5FC5;&#x987B;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>Vue.component(&apos;some-comp&apos;, {
+  data: {
+    foo: &apos;bar&apos;
+  }
+})
+
+export default {
+  data: {
+    foo: &apos;bar&apos;
+  }
+}
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>Vue.component(&apos;some-comp&apos;, {
+  data: function () {
+    return {
+      foo: &apos;bar&apos;
+    }
+  }
+})
+
+export default {
+  data () {
+    return {
+      foo: &apos;bar&apos;
+    }
+  }
+}
+
+// &#x5728;&#x4E00;&#x4E2A; Vue &#x7684;&#x6839;&#x5B9E;&#x4F8B;&#x4E0A;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;
+// &#x56E0;&#x4E3A;&#x53EA;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x5B9E;&#x4F8B;&#x3002;
+new Vue({
+  data: {
+    foo: &apos;bar&apos;
+  }
+})
+</code></pre><h3 id="prop-&#x5B9A;&#x4E49;">Prop &#x5B9A;&#x4E49;</h3>
+<blockquote>
+<p>Prop &#x5B9A;&#x4E49;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x8BE6;&#x7EC6;&#x3002;</p>
+<p>&#x5728;&#x4F60;&#x63D0;&#x4EA4;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;prop &#x7684;&#x5B9A;&#x4E49;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x8BE6;&#x7EC6;&#xFF0C;&#x81F3;&#x5C11;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x5176;&#x7C7B;&#x578B;&#x3002;
+&#x53CD;&#x4F8B;</p>
+<pre><code>// &#x8FD9;&#x6837;&#x505A;&#x53EA;&#x6709;&#x5F00;&#x53D1;&#x539F;&#x578B;&#x7CFB;&#x7EDF;&#x65F6;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;
+props: [&apos;status&apos;]
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>props: {
+  status: String
+}
+</code></pre><p>&#x66F4;&#x597D;&#x7684;&#x505A;&#x6CD5;&#xFF01;</p>
+<pre><code>props: {
+  status: {
+    type: String,
+    required: true,
+    validator: function (value) {
+      return [
+        &apos;syncing&apos;,
+        &apos;synced&apos;,
+        &apos;version-conflict&apos;,
+        &apos;error&apos;
+      ].indexOf(value) !== -1
+    }
+  }
+}
+</code></pre><h3 id="&#x4E3A;-v-for-&#x8BBE;&#x7F6E;&#x952E;&#x503C;">&#x4E3A; v-for &#x8BBE;&#x7F6E;&#x952E;&#x503C;</h3>
+<p>&#x603B;&#x662F;&#x7528; key &#x914D;&#x5408; v-for&#x3002;</p>
+<p>&#x5728;&#x7EC4;&#x4EF6;&#x4E0A;&#x603B;&#x662F;&#x5FC5;&#x987B;&#x7528; key &#x914D;&#x5408; v-for&#xFF0C;&#x4EE5;&#x4FBF;&#x7EF4;&#x62A4;&#x5185;&#x90E8;&#x7EC4;&#x4EF6;&#x53CA;&#x5176;&#x5B50;&#x6811;&#x7684;&#x72B6;&#x6001;&#x3002;&#x751A;&#x81F3;&#x5728;&#x5143;&#x7D20;&#x4E0A;&#x7EF4;&#x62A4;&#x53EF;&#x9884;&#x6D4B;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x6BD4;&#x5982;&#x52A8;&#x753B;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x56FA;&#x5316; (object constancy)&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x597D;&#x7684;&#x505A;&#x6CD5;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;ul&gt;
+  &lt;li v-for=&quot;todo in todos&quot;&gt;
+
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;ul&gt;
+  &lt;li
+    v-for=&quot;todo in todos&quot;
+    :key=&quot;todo.id&quot;
+  &gt;
+
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h3 id="&#x907F;&#x514D;-v-if-&#x548C;-v-for-&#x7528;&#x5728;&#x4E00;&#x8D77;">&#x907F;&#x514D; v-if &#x548C; v-for &#x7528;&#x5728;&#x4E00;&#x8D77;</h3>
+<blockquote>
+<p>&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x628A; v-if &#x548C; v-for &#x540C;&#x65F6;&#x7528;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E0A;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x5728;&#x4E24;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x503E;&#x5411;&#x4E8E;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
+<ul>
+<li><p>&#x4E3A;&#x4E86;&#x8FC7;&#x6EE4;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x9879;&#x76EE; (&#x6BD4;&#x5982; v-for=&quot;user in users&quot; v-if=&quot;user.isActive&quot;)&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x5F62;&#x4E0B;&#xFF0C;&#x8BF7;&#x5C06; users &#x66FF;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027; (&#x6BD4;&#x5982; activeUsers)&#xFF0C;&#x8BA9;&#x5176;&#x8FD4;&#x56DE;&#x8FC7;&#x6EE4;&#x540E;&#x7684;&#x5217;&#x8868;&#x3002;</p>
+</li>
+<li><p>&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x6E32;&#x67D3;&#x672C;&#x5E94;&#x8BE5;&#x88AB;&#x9690;&#x85CF;&#x7684;&#x5217;&#x8868; (&#x6BD4;&#x5982; v-for=&quot;user in users&quot; v-if=&quot;shouldShowUsers&quot;)&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x5F62;&#x4E0B;&#xFF0C;&#x8BF7;&#x5C06; v-if &#x79FB;&#x52A8;&#x81F3;&#x5BB9;&#x5668;&#x5143;&#x7D20;&#x4E0A; (&#x6BD4;&#x5982; ul, ol)&#x3002;</p>
+</li>
+</ul>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;ul&gt;
+  &lt;li
+    v-for=&quot;user in users&quot;
+    v-if=&quot;user.isActive&quot;
+    :key=&quot;user.id&quot;
+  &gt;
+
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li
+    v-for=&quot;user in users&quot;
+    v-if=&quot;shouldShowUsers&quot;
+    :key=&quot;user.id&quot;
+  &gt;
+
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;ul&gt;
+  &lt;li
+    v-for=&quot;user in activeUsers&quot;
+    :key=&quot;user.id&quot;
+  &gt;
+
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul v-if=&quot;shouldShowUsers&quot;&gt;
+  &lt;li
+    v-for=&quot;user in users&quot;
+    :key=&quot;user.id&quot;
+  &gt;
+
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h3 id="&#x4E3A;&#x7EC4;&#x4EF6;&#x6837;&#x5F0F;&#x8BBE;&#x7F6E;&#x4F5C;&#x7528;&#x57DF;">&#x4E3A;&#x7EC4;&#x4EF6;&#x6837;&#x5F0F;&#x8BBE;&#x7F6E;&#x4F5C;&#x7528;&#x57DF;</h3>
+<blockquote>
+<p>&#x5BF9;&#x4E8E;&#x5E94;&#x7528;&#x6765;&#x8BF4;&#xFF0C;&#x9876;&#x7EA7; App &#x7EC4;&#x4EF6;&#x548C;&#x5E03;&#x5C40;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6837;&#x5F0F;&#x53EF;&#x4EE5;&#x662F;&#x5168;&#x5C40;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x5B83;&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x90FD;&#x5E94;&#x8BE5;&#x662F;&#x6709;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x3002;</p>
+<p>&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x53EA;&#x548C;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x6709;&#x5173;&#x3002;&#x4F60;&#x4E0D;&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528; scoped &#x7279;&#x6027;&#x3002;&#x8BBE;&#x7F6E;&#x4F5C;&#x7528;&#x57DF;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; CSS Modules&#xFF0C;&#x90A3;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; class &#x7684;&#x7C7B;&#x4F3C; BEM &#x7684;&#x7B56;&#x7565;&#xFF0C;&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x5B83;&#x7684;&#x5E93;&#x6216;&#x7EA6;&#x5B9A;&#x3002;</p>
+<p>&#x4E0D;&#x7BA1;&#x600E;&#x6837;&#xFF0C;&#x5BF9;&#x4E8E;&#x7EC4;&#x4EF6;&#x5E93;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x66F4;&#x503E;&#x5411;&#x4E8E;&#x9009;&#x7528;&#x57FA;&#x4E8E; class &#x7684;&#x7B56;&#x7565;&#x800C;&#x4E0D;&#x662F; scoped &#x7279;&#x6027;&#x3002;</p>
+<p>&#x8FD9;&#x8BA9;&#x8986;&#x5199;&#x5185;&#x90E8;&#x6837;&#x5F0F;&#x66F4;&#x5BB9;&#x6613;&#xFF1A;&#x4F7F;&#x7528;&#x4E86;&#x5E38;&#x4EBA;&#x53EF;&#x7406;&#x89E3;&#x7684; class &#x540D;&#x79F0;&#x4E14;&#x6CA1;&#x6709;&#x592A;&#x9AD8;&#x7684;&#x9009;&#x62E9;&#x5668;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x592A;&#x4F1A;&#x5BFC;&#x81F4;&#x51B2;&#x7A81;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;template&gt;
+  &lt;button class=&quot;btn btn-close&quot;&gt;X&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;style&gt;
+.btn-close {
+  background-color: red;
+}
+&lt;/style&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;template&gt;
+  &lt;button class=&quot;button button-close&quot;&gt;X&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;!-- &#x4F7F;&#x7528; `scoped` &#x7279;&#x6027; --&gt;
+&lt;style scoped&gt;
+.button {
+  border: none;
+  border-radius: 2px;
+}
+
+.button-close {
+  background-color: red;
+}
+&lt;/style&gt;
+
+&lt;template&gt;
+  &lt;button :class=&quot;[$style.button, $style.buttonClose]&quot;&gt;X&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;!-- &#x4F7F;&#x7528; CSS Modules --&gt;
+&lt;style module&gt;
+.button {
+  border: none;
+  border-radius: 2px;
+}
+
+.buttonClose {
+  background-color: red;
+}
+&lt;/style&gt;
+
+&lt;template&gt;
+  &lt;button class=&quot;c-Button c-Button--close&quot;&gt;X&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;!-- &#x4F7F;&#x7528; BEM &#x7EA6;&#x5B9A; --&gt;
+&lt;style&gt;
+.c-Button {
+  border: none;
+  border-radius: 2px;
+}
+
+.c-Button--close {
+  background-color: red;
+}
+&lt;/style&gt;
+</code></pre><h3 id="&#x7EC4;&#x4EF6;&#x6587;&#x4EF6;">&#x7EC4;&#x4EF6;&#x6587;&#x4EF6;</h3>
+<blockquote>
+<p>&#x53EA;&#x8981;&#x6709;&#x80FD;&#x591F;&#x62FC;&#x63A5;&#x6587;&#x4EF6;&#x7684;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#xFF0C;&#x5C31;&#x628A;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x5355;&#x72EC;&#x5206;&#x6210;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x5F53;&#x4F60;&#x9700;&#x8981;&#x7F16;&#x8F91;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6216;&#x67E5;&#x9605;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x7528;&#x6CD5;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x5FEB;&#x901F;&#x7684;&#x627E;&#x5230;&#x5B83;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>Vue.component(&apos;TodoList&apos;, {
+  // ...
+})
+
+Vue.component(&apos;TodoItem&apos;, {
+  // ...
+})
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>components/
+|- TodoList.js
+|- TodoItem.js
+
+components/
+|- TodoList.vue
+|- TodoItem.vue
+</code></pre><h3 id="&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#x5199;">&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#x5199;</h3>
+<blockquote>
+<p>&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x5E94;&#x8BE5;&#x59CB;&#x7EC8;&#x662F;&#x5355;&#x8BCD;&#x5927;&#x5199;&#x5F00;&#x5934; (PascalCase)</p>
+<p>&#x5355;&#x8BCD;&#x5927;&#x5199;&#x5F00;&#x5934;&#x5BF9;&#x4E8E;&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x81EA;&#x52A8;&#x8865;&#x5168;&#x6700;&#x4E3A;&#x53CB;&#x597D;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4F7F;&#x5F97;&#x6211;&#x4EEC;&#x5728; JS(X) &#x548C;&#x6A21;&#x677F;&#x4E2D;&#x5F15;&#x7528;&#x7EC4;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x4E00;&#x81F4;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>components/
+|- mycomponent.vue
+
+components/
+|- myComponent.vue
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>components/
+|- MyComponent.vue
+</code></pre><h3 id="&#x57FA;&#x7840;&#x7EC4;&#x4EF6;&#x540D;">&#x57FA;&#x7840;&#x7EC4;&#x4EF6;&#x540D;</h3>
+<blockquote>
+<p>&#x5E94;&#x7528;&#x7279;&#x5B9A;&#x6837;&#x5F0F;&#x548C;&#x7EA6;&#x5B9A;&#x7684;&#x57FA;&#x7840;&#x7EC4;&#x4EF6; (&#x4E5F;&#x5C31;&#x662F;&#x5C55;&#x793A;&#x7C7B;&#x7684;&#x3001;&#x65E0;&#x903B;&#x8F91;&#x7684;&#x6216;&#x65E0;&#x72B6;&#x6001;&#x7684;&#x7EC4;&#x4EF6;) &#x5E94;&#x8BE5;&#x5168;&#x90E8;&#x4EE5;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x524D;&#x7F00;&#x5F00;&#x5934;&#xFF0C;&#x6BD4;&#x5982; Base&#x3001;App &#x6216; V&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>components/
+|- MyButton.vue
+|- VueTable.vue
+|- Icon.vue
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>components/
+|- BaseButton.vue
+|- BaseTable.vue
+|- BaseIcon.vue
+
+components/
+|- AppButton.vue
+|- AppTable.vue
+|- AppIcon.vue
+
+components/
+|- VButton.vue
+|- VTable.vue
+|- VIcon.vue
+</code></pre><h3 id="&#x7D27;&#x5BC6;&#x8026;&#x5408;&#x7684;&#x7EC4;&#x4EF6;&#x540D;">&#x7D27;&#x5BC6;&#x8026;&#x5408;&#x7684;&#x7EC4;&#x4EF6;&#x540D;</h3>
+<blockquote>
+<p>&#x548C;&#x7236;&#x7EC4;&#x4EF6;&#x7D27;&#x5BC6;&#x8026;&#x5408;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x5E94;&#x8BE5;&#x4EE5;&#x7236;&#x7EC4;&#x4EF6;&#x540D;&#x4F5C;&#x4E3A;&#x524D;&#x7F00;&#x547D;&#x540D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x53EA;&#x5728;&#x67D0;&#x4E2A;&#x7236;&#x7EC4;&#x4EF6;&#x7684;&#x573A;&#x666F;&#x4E0B;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x8FD9;&#x5C42;&#x5173;&#x7CFB;&#x5E94;&#x8BE5;&#x4F53;&#x73B0;&#x5728;&#x5176;&#x540D;&#x5B57;&#x4E0A;&#x3002;&#x56E0;&#x4E3A;&#x7F16;&#x8F91;&#x5668;&#x901A;&#x5E38;&#x4F1A;&#x6309;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#x7EC4;&#x7EC7;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#x53EF;&#x4EE5;&#x628A;&#x76F8;&#x5173;&#x8054;&#x7684;&#x6587;&#x4EF6;&#x6392;&#x5728;&#x4E00;&#x8D77;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>components/
+|- TodoList.vue
+|- TodoItem.vue
+|- TodoButton.vue
+
+components/
+|- SearchSidebar.vue
+|- NavigationForSearchSidebar.vue
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>components/
+|- TodoList.vue
+|- TodoListItem.vue
+|- TodoListItemButton.vue
+
+components/
+|- SearchSidebar.vue
+|- SearchSidebarNavigation.vue
+</code></pre><h3 id="&#x7EC4;&#x4EF6;&#x540D;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x987A;&#x5E8F;">&#x7EC4;&#x4EF6;&#x540D;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x987A;&#x5E8F;</h3>
+<blockquote>
+<p>&#x7EC4;&#x4EF6;&#x540D;&#x5E94;&#x8BE5;&#x4EE5;&#x9AD8;&#x7EA7;&#x522B;&#x7684;(&#x901A;&#x5E38;&#x662F;&#x4E00;&#x822C;&#x5316;&#x63CF;&#x8FF0;&#x7684;) &#x5355;&#x8BCD;&#x5F00;&#x5934;&#xFF0C;&#x4EE5;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x4FEE;&#x9970;&#x8BCD;&#x7ED3;&#x5C3E;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>components/
+|- ClearSearchButton.vue
+|- ExcludeFromSearchInput.vue
+|- LaunchOnStartupCheckbox.vue
+|- RunSearchButton.vue
+|- SearchInput.vue
+|- TermsCheckbox.vue
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>components/
+|- SearchButtonClear.vue
+|- SearchButtonRun.vue
+|- SearchInputQuery.vue
+|- SearchInputExcludeGlob.vue
+|- SettingsCheckboxTerms.vue
+|- SettingsCheckboxLaunchOnStartup.vue
+</code></pre><h3 id="&#x81EA;&#x95ED;&#x5408;&#x7EC4;&#x4EF6;">&#x81EA;&#x95ED;&#x5408;&#x7EC4;&#x4EF6;</h3>
+<blockquote>
+<p>&#x5728;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x548C; JSX &#x4E2D;&#x6CA1;&#x6709;&#x5185;&#x5BB9;&#x7684;&#x7EC4;&#x4EF6;&#x5E94;&#x8BE5;&#x662F;&#x81EA;&#x95ED;&#x5408;&#x7684;&#x2014;&#x2014;&#x4F46;&#x5728; DOM &#x6A21;&#x677F;&#x91CC;&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x8FD9;&#x6837;&#x505A;&#x3002;</p>
+<p>&#x81EA;&#x95ED;&#x5408;&#x7EC4;&#x4EF6;&#x8868;&#x793A;&#x5B83;&#x4EEC;&#x4E0D;&#x4EC5;&#x6CA1;&#x6709;&#x5185;&#x5BB9;&#xFF0C;&#x800C;&#x4E14;&#x523B;&#x610F;&#x6CA1;&#x6709;&#x5185;&#x5BB9;&#x3002;&#x5176;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5C31;&#x597D;&#x50CF;&#x4E66;&#x4E0A;&#x7684;&#x4E00;&#x9875;&#x767D;&#x7EB8;&#x5BF9;&#x6BD4;&#x8D34;&#x6709;&#x201C;&#x672C;&#x9875;&#x6709;&#x610F;&#x7559;&#x767D;&#x201D;&#x6807;&#x7B7E;&#x7684;&#x767D;&#x7EB8;&#x3002;&#x800C;&#x4E14;&#x6CA1;&#x6709;&#x4E86;&#x989D;&#x5916;&#x7684;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#xFF0C;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x4E5F;&#x66F4;&#x7B80;&#x6D01;&#x3002;</p>
+<p>&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;HTML &#x5E76;&#x4E0D;&#x652F;&#x6301;&#x81EA;&#x95ED;&#x5408;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x7D20;&#x2014;&#x2014;&#x53EA;&#x6709;&#x5B98;&#x65B9;&#x7684;&#x201C;&#x7A7A;&#x201D;&#x5143;&#x7D20;&#x3002;&#x6240;&#x4EE5;&#x4E0A;&#x8FF0;&#x7B56;&#x7565;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x8FDB;&#x5165; DOM &#x4E4B;&#x524D; Vue &#x7684;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x5668;&#x80FD;&#x591F;&#x89E6;&#x8FBE;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x4EA7;&#x51FA;&#x7B26;&#x5408; DOM &#x89C4;&#x8303;&#x7684; HTML&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;!-- &#x5728;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x548C; JSX &#x4E2D; --&gt;
+&lt;my-component&gt;&lt;/my-component&gt;
+
+&lt;!-- &#x5728; DOM &#x6A21;&#x677F;&#x4E2D; --&gt;
+&lt;my-component/&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;!-- &#x5728;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x548C; JSX &#x4E2D; --&gt;
+&lt;my-component/&gt;
+
+&lt;!-- &#x5728; DOM &#x6A21;&#x677F;&#x4E2D; --&gt;
+&lt;my-component&gt;&lt;/my-component&gt;
+</code></pre><h3 id="&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x5927;&#x5C0F;&#x5199;">&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x5927;&#x5C0F;&#x5199;</h3>
+<blockquote>
+<p>&#x7EC4;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x5E94;&#x8BE5;&#x59CB;&#x7EC8;&#x662F;kebab-case</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;!-- &#x5728;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x4E2D; --&gt;
+&lt;mycomponent/&gt;
+
+&lt;!-- &#x5728;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x677F;&#x4E2D; --&gt;
+&lt;myComponent/&gt;
+
+&lt;!-- &#x5728; DOM &#x6A21;&#x677F;&#x4E2D; --&gt;
+&lt;MyComponent&gt;&lt;/MyComponent&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;my-component&gt;&lt;/my-component&gt;
+</code></pre><h3 id="jsjsx-&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x5927;&#x5C0F;&#x5199;">JS/JSX &#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x5927;&#x5C0F;&#x5199;</h3>
+<blockquote>
+<p>JS/JSX &#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x540D;&#x5E94;&#x8BE5;&#x59CB;&#x7EC8;&#x662F; PascalCase &#x7684;&#xFF0C;&#x5C3D;&#x7BA1;&#x5728;&#x8F83;&#x4E3A;&#x7B80;&#x5355;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x53EA;&#x4F7F;&#x7528; Vue.component &#x8FDB;&#x884C;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;&#x6CE8;&#x518C;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; kebab-case &#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>Vue.component(&apos;myComponent&apos;, {
+  // ...
+})
+
+import myComponent from &apos;./MyComponent.vue&apos;
+
+export default {
+  name: &apos;myComponent&apos;,
+  // ...
+}
+
+export default {
+  name: &apos;my-component&apos;,
+  // ...
+}
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>Vue.component(&apos;MyComponent&apos;, {
+  // ...
+})
+
+Vue.component(&apos;my-component&apos;, {
+  // ...
+})
+
+import MyComponent from &apos;./MyComponent.vue&apos;
+
+export default {
+  name: &apos;MyComponent&apos;,
+  // ...
+}
+</code></pre><h3 id="prop-&#x540D;&#x5927;&#x5C0F;&#x5199;">Prop &#x540D;&#x5927;&#x5C0F;&#x5199;</h3>
+<blockquote>
+<p>&#x5728;&#x58F0;&#x660E; prop &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x547D;&#x540D;&#x5E94;&#x8BE5;&#x59CB;&#x7EC8;&#x4F7F;&#x7528; camelCase&#xFF0C;&#x800C;&#x5728;&#x6A21;&#x677F;&#x548C; JSX &#x4E2D;&#x5E94;&#x8BE5;&#x59CB;&#x7EC8;&#x4F7F;&#x7528; kebab-case&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5355;&#x7EAF;&#x7684;&#x9075;&#x5FAA;&#x6BCF;&#x4E2A;&#x8BED;&#x8A00;&#x7684;&#x7EA6;&#x5B9A;&#x3002;&#x5728; JavaScript &#x4E2D;&#x66F4;&#x81EA;&#x7136;&#x7684;&#x662F; camelCase&#x3002;&#x800C;&#x5728; HTML &#x4E2D;&#x5219;&#x662F; kebab-case&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>props: {
+  &apos;greeting-text&apos;: String
+}
+
+&lt;welcome-message greetingText=&quot;hi&quot;/&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>props: {
+  greetingText: String
+}
+
+&lt;welcome-message greeting-text=&quot;hi&quot;/&gt;
+</code></pre><h3 id="&#x591A;&#x4E2A;&#x7279;&#x6027;&#x7684;&#x5143;&#x7D20;">&#x591A;&#x4E2A;&#x7279;&#x6027;&#x7684;&#x5143;&#x7D20;</h3>
+<blockquote>
+<p>&#x591A;&#x4E2A;&#x7279;&#x6027;&#x7684;&#x5143;&#x7D20;&#x5E94;&#x8BE5;&#x5206;&#x591A;&#x884C;&#x64B0;&#x5199;&#xFF0C;&#x6BCF;&#x4E2A;&#x7279;&#x6027;&#x4E00;&#x884C;&#x3002;</p>
+<p>&#x5728; JavaScript &#x4E2D;&#xFF0C;&#x7528;&#x591A;&#x884C;&#x5206;&#x9694;&#x5BF9;&#x8C61;&#x7684;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#x662F;&#x5F88;&#x5E38;&#x89C1;&#x7684;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x66F4;&#x6613;&#x8BFB;&#x3002;&#x6A21;&#x677F;&#x548C; JSX &#x503C;&#x5F97;&#x6211;&#x4EEC;&#x505A;&#x76F8;&#x540C;&#x7684;&#x8003;&#x8651;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;img src=&quot;https://vuejs.org/images/logo.png&quot; alt=&quot;Vue Logo&quot;&gt;
+
+&lt;my-component foo=&quot;a&quot; bar=&quot;b&quot; baz=&quot;c&quot;/&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;img
+  src=&quot;https://vuejs.org/images/logo.png&quot;
+  alt=&quot;Vue Logo&quot;
+&gt;
+
+&lt;my-component
+  foo=&quot;a&quot;
+  bar=&quot;b&quot;
+  baz=&quot;c&quot;
+/&gt;
+</code></pre><h3 id="&#x6A21;&#x677F;&#x4E2D;&#x7B80;&#x5355;&#x7684;&#x8868;&#x8FBE;&#x5F0F;">&#x6A21;&#x677F;&#x4E2D;&#x7B80;&#x5355;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</h3>
+<blockquote>
+<p>&#x7EC4;&#x4EF6;&#x6A21;&#x677F;&#x5E94;&#x8BE5;&#x53EA;&#x5305;&#x542B;&#x7B80;&#x5355;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x590D;&#x6742;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x5219;&#x5E94;&#x8BE5;&#x91CD;&#x6784;&#x4E3A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x6216;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x590D;&#x6742;&#x8868;&#x8FBE;&#x5F0F;&#x4F1A;&#x8BA9;&#x4F60;&#x7684;&#x6A21;&#x677F;&#x53D8;&#x5F97;&#x4E0D;&#x90A3;&#x4E48;&#x58F0;&#x660E;&#x5F0F;&#x3002;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x63CF;&#x8FF0;&#x5E94;&#x8BE5;&#x51FA;&#x73B0;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x800C;&#x975E;&#x5982;&#x4F55;&#x8BA1;&#x7B97;&#x90A3;&#x4E2A;&#x503C;&#x3002;&#x800C;&#x4E14;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x91CD;&#x7528;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>{{
+  fullName.split(&apos; &apos;).map(word =&gt; {
+    return word[0].toUpperCase() + word.slice(1)
+  }).join(&apos; &apos;)
+}}
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;!-- &#x5728;&#x6A21;&#x677F;&#x4E2D; --&gt;
+
+
+// &#x590D;&#x6742;&#x8868;&#x8FBE;&#x5F0F;&#x5DF2;&#x7ECF;&#x79FB;&#x5165;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;
+computed: {
+  normalizedFullName: function () {
+    return this.fullName.split(&apos; &apos;).map(function (word) {
+      return word[0].toUpperCase() + word.slice(1)
+    }).join(&apos; &apos;)
+  }
+}
+</code></pre><h3 id="&#x7B80;&#x5355;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;">&#x7B80;&#x5355;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;</h3>
+<blockquote>
+<p>&#x5E94;&#x8BE5;&#x628A;&#x590D;&#x6742;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x5206;&#x5272;&#x4E3A;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>computed: {
+  price: function () {
+    var basePrice = this.manufactureCost / (1 - this.profitMargin)
+    return (
+      basePrice -
+      basePrice * (this.discountPercent || 0)
+    )
+  }
+}
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>computed: {
+  basePrice: function () {
+    return this.manufactureCost / (1 - this.profitMargin)
+  },
+  discount: function () {
+    return this.basePrice * (this.discountPercent || 0)
+  },
+  finalPrice: function () {
+    return this.basePrice - this.discount
+  }
+}
+</code></pre><h3 id="&#x5E26;&#x5F15;&#x53F7;&#x7684;&#x7279;&#x6027;&#x503C;">&#x5E26;&#x5F15;&#x53F7;&#x7684;&#x7279;&#x6027;&#x503C;</h3>
+<blockquote>
+<p>&#x975E;&#x7A7A; HTML &#x7279;&#x6027;&#x503C;&#x5E94;&#x8BE5;&#x59CB;&#x7EC8;&#x5E26;&#x53CC;&#x5F15;&#x53F7;</p>
+<p>&#x5728; HTML &#x4E2D;&#x4E0D;&#x5E26;&#x7A7A;&#x683C;&#x7684;&#x7279;&#x6027;&#x503C;&#x662F;&#x53EF;&#x4EE5;&#x6CA1;&#x6709;&#x5F15;&#x53F7;&#x7684;&#xFF0C;&#x4F46;&#x8FD9;&#x9F13;&#x52B1;&#x4E86;&#x5927;&#x5BB6;&#x5728;&#x7279;&#x5F81;&#x503C;&#x91CC;&#x4E0D;&#x5199;&#x7A7A;&#x683C;&#xFF0C;&#x5BFC;&#x81F4;&#x53EF;&#x8BFB;&#x6027;&#x53D8;&#x5DEE;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;input type=text&gt;
+
+&lt;app-sidebar :style={width:sidebarWidth+&apos;px&apos;}&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;input type=&quot;text&quot;&gt;
+
+&lt;AppSidebar :style=&quot;{ width: sidebarWidth + &apos;px&apos; }&quot;&gt;
+</code></pre><h3 id="&#x6307;&#x4EE4;&#x7F29;&#x5199;">&#x6307;&#x4EE4;&#x7F29;&#x5199;</h3>
+<blockquote>
+<p>&#x6307;&#x4EE4;&#x7F29;&#x5199; (&#x7528; : &#x8868;&#x793A; v-bind: &#x548C;&#x7528; @ &#x8868;&#x793A; v-on:)</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;input
+  v-bind:value=&quot;newTodoText&quot;
+  :placeholder=&quot;newTodoInstructions&quot;
+&gt;
+
+&lt;input
+  v-on:input=&quot;onInput&quot;
+  @focus=&quot;onFocus&quot;
+&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;input
+  :value=&quot;newTodoText&quot;
+  :placeholder=&quot;newTodoInstructions&quot;
+&gt;
+
+&lt;input
+  @input=&quot;onInput&quot;
+  @focus=&quot;onFocus&quot;
+&gt;
+</code></pre><h3 id="&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x7684;&#x9876;&#x7EA7;&#x5143;&#x7D20;&#x7684;&#x987A;&#x5E8F;">&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x7684;&#x9876;&#x7EA7;&#x5143;&#x7D20;&#x7684;&#x987A;&#x5E8F;</h3>
+<blockquote>
+<p>&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x5E94;&#x8BE5;&#x603B;&#x662F;&#x8BA9; <code>&lt;script&gt;</code>&#x3001;<code>&lt;template&gt;</code> &#x548C; <code>&lt;style&gt;</code> &#x6807;&#x7B7E;&#x7684;&#x987A;&#x5E8F;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;&#x4E14; <code>&lt;style&gt;</code> &#x8981;&#x653E;&#x5728;&#x6700;&#x540E;&#xFF0C;&#x56E0;&#x4E3A;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x6807;&#x7B7E;&#x81F3;&#x5C11;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;style&gt;/* ... */&lt;/style&gt;
+&lt;script&gt;/* ... */&lt;/script&gt;
+&lt;template&gt;...&lt;/template&gt;
+
+&lt;!-- ComponentA.vue --&gt;
+&lt;script&gt;/* ... */&lt;/script&gt;
+&lt;template&gt;...&lt;/template&gt;
+&lt;style&gt;/* ... */&lt;/style&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;!-- ComponentA.vue --&gt;
+&lt;template&gt;...&lt;/template&gt;
+&lt;script&gt;/* ... */&lt;/script&gt;
+&lt;style&gt;/* ... */&lt;/style&gt;
+
+&lt;!-- ComponentB.vue --&gt;
+&lt;template&gt;...&lt;/template&gt;
+&lt;script&gt;/* ... */&lt;/script&gt;
+&lt;style&gt;/* ... */&lt;/style&gt;
+</code></pre><h3 id="scoped-&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;">scoped &#x4E2D;&#x7684;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;</h3>
+<blockquote>
+<p>&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x5728; scoped &#x4E2D;&#x51FA;&#x73B0;&#x3002;</p>
+<p>&#x5728; scoped &#x6837;&#x5F0F;&#x4E2D;&#xFF0C;&#x7C7B;&#x9009;&#x62E9;&#x5668;&#x6BD4;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#x66F4;&#x597D;&#xFF0C;&#x56E0;&#x4E3A;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#x662F;&#x5F88;&#x6162;&#x7684;&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;template&gt;
+  &lt;button&gt;X&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;style scoped&gt;
+button {
+  background-color: red;
+}
+&lt;/style&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;template&gt;
+  &lt;button class=&quot;btn btn-close&quot;&gt;X&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;style scoped&gt;
+.btn-close {
+  background-color: red;
+}
+&lt;/style&gt;
+</code></pre><h3 id="&#x9690;&#x6027;&#x7684;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;">&#x9690;&#x6027;&#x7684;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;</h3>
+<blockquote>
+<p>&#x5E94;&#x8BE5;&#x4F18;&#x5148;&#x901A;&#x8FC7; prop &#x548C;&#x4E8B;&#x4EF6;&#x8FDB;&#x884C;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#xFF0C;&#x800C;&#x4E0D;&#x662F; this.$parent &#x6216;&#x6539;&#x53D8; prop&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x7406;&#x60F3;&#x7684; Vue &#x5E94;&#x7528;&#x662F; prop &#x5411;&#x4E0B;&#x4F20;&#x9012;&#xFF0C;&#x4E8B;&#x4EF6;&#x5411;&#x4E0A;&#x4F20;&#x9012;&#x7684;&#x3002;&#x9075;&#x5FAA;&#x8FD9;&#x4E00;&#x7EA6;&#x5B9A;&#x4F1A;&#x8BA9;&#x4F60;&#x7684;&#x7EC4;&#x4EF6;&#x66F4;&#x6613;&#x4E8E;&#x7406;&#x89E3;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x4E00;&#x4E9B;&#x8FB9;&#x754C;&#x60C5;&#x51B5;&#x4E0B; prop &#x7684;&#x53D8;&#x66F4;&#x6216; this.$parent &#x80FD;&#x591F;&#x7B80;&#x5316;&#x4E24;&#x4E2A;&#x6DF1;&#x5EA6;&#x8026;&#x5408;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x95EE;&#x9898;&#x5728;&#x4E8E;&#xFF0C;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x5728;&#x5F88;&#x591A;&#x7B80;&#x5355;&#x7684;&#x573A;&#x666F;&#x4E0B;&#x53EF;&#x80FD;&#x4F1A;&#x66F4;&#x65B9;&#x4FBF;&#x3002;&#x4F46;&#x8BF7;&#x5F53;&#x5FC3;&#xFF0C;&#x4E0D;&#x8981;&#x4E3A;&#x4E86;&#x4E00;&#x65F6;&#x65B9;&#x4FBF; (&#x5C11;&#x5199;&#x4EE3;&#x7801;) &#x800C;&#x727A;&#x7272;&#x6570;&#x636E;&#x6D41;&#x5411;&#x7684;&#x7B80;&#x6D01;&#x6027; (&#x6613;&#x4E8E;&#x7406;&#x89E3;)&#x3002;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>Vue.component(&apos;TodoItem&apos;, {
+  props: {
+    todo: {
+      type: Object,
+      required: true
+    }
+  },
+  template: &apos;&lt;input v-model=&quot;todo.text&quot;&gt;&apos;
+})
+
+Vue.component(&apos;TodoItem&apos;, {
+  props: {
+    todo: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    removeTodo () {
+      let vm = this
+      vm.$parent.todos = vm.$parent.todos.filter(function (todo) {
+        return todo.id !== vm.todo.id
+      })
+    }
+  },
+  template: `
+    &lt;span&gt;
+
+      &lt;button @click=&quot;removeTodo&quot;&gt;
+        X
+      &lt;/button&gt;
+    &lt;/span&gt;
+  `
+})
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>Vue.component(&apos;TodoItem&apos;, {
+  props: {
+    todo: {
+      type: Object,
+      required: true
+    }
+  },
+  template: `
+    &lt;input
+      :value=&quot;todo.text&quot;
+      @input=&quot;$emit(&apos;input&apos;, $event.target.value)&quot;
+    &gt;
+  `
+})
+
+Vue.component(&apos;TodoItem&apos;, {
+  props: {
+    todo: {
+      type: Object,
+      required: true
+    }
+  },
+  template: `
+    &lt;span&gt;
+
+      &lt;button @click=&quot;$emit(&apos;delete&apos;)&quot;&gt;
+        X
+      &lt;/button&gt;
+    &lt;/span&gt;
+  `
+})
+</code></pre><h3 id="&#x7981;&#x6B62;&#x5728;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4E2D;&#x51FA;&#x73B0;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;">&#x7981;&#x6B62;&#x5728;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4E2D;&#x51FA;&#x73B0;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</h3>
+<blockquote>
+<p>&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x5E94;&#x8BE5;&#x662F;&#x540C;&#x6B65;&#x7684;. &#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4E2D;&#x7684;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x4E0D;&#x80FD;&#x6309;&#x9884;&#x671F;&#x5730;&#x6267;&#x884C;,&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x5F15;&#x53D1;&#x5F02;&#x5E38;</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;script&gt;
+export default {
+  computed: {
+    pro () {
+      return Promise.all([new Promise((resolve, reject) =&gt; {})])
+    },
+    foo1: async function () {
+      return await someFunc()
+    },
+    bar () {
+      return fetch(url).then(response =&gt; {})
+    },
+    tim () {
+      setTimeout(() =&gt; { }, 0)
+    },
+    inter () {
+      setInterval(() =&gt; { }, 0)
+    },
+    anim () {
+      requestAnimationFrame(() =&gt; {})
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>export default {
+  computed: {
+    foo () {
+      let bar = 0
+      try {
+        bar = bar / this.a
+      } catch (e) {
+        return 0
+      } finally {
+        return bar
+      }
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre><h3 id="&#x4E0D;&#x8981;&#x5199;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;">&#x4E0D;&#x8981;&#x5199;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;</h3>
+<blockquote>
+<p>&#x5728;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4E2D;&#x5F15;&#x5165;&#x526F;&#x4F5C;&#x7528;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x4E00;&#x79CD;&#x975E;&#x5E38;&#x7CDF;&#x7CD5;&#x7684;&#x505A;&#x6CD5;,&#x5B83;&#x4F7F;&#x4EE3;&#x7801;&#x4E0D;&#x53EF;&#x9884;&#x6D4B;&#x4E14;&#x96BE;&#x4EE5;&#x7406;&#x89E3;.</p>
+</blockquote>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;script&gt;
+export default {
+  computed: {
+    fullName () {
+      this.firstName = &apos;lorem&apos;
+      return `${this.firstName} ${this.lastName}` // &#x5F15;&#x53D1;&#x526F;&#x4F5C;&#x7528;,this.firstName&#x88AB;&#x6539;&#x53D8;
+    },
+    reversedArray () {
+      return this.array.reverse() // &#x5F15;&#x53D1;&#x526F;&#x4F5C;&#x7528;,&#x539F;&#x6570;&#x7EC4;&#x88AB;&#x6539;&#x53D8;&#x4E86;
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;script&gt;
+export default {
+  computed: {
+    fullName () {
+      return `${this.firstName} ${this.lastName}`
+    },
+    reversedArray () {
+      return this.array.slice(0).reverse() // .slice(0)&#x4EA7;&#x751F;&#x539F;&#x6570;&#x7EC4;&#x7684;&#x526F;&#x672C;,&#x539F;&#x6570;&#x7EC4;&#x6CA1;&#x88AB;&#x6539;&#x53D8;
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre><h3 id="&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x5FC5;&#x9700;&#x6709;&#x8FD4;&#x56DE;&#x503C;">&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x5FC5;&#x9700;&#x6709;&#x8FD4;&#x56DE;&#x503C;</h3>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>&lt;script&gt;
+export default {
+  computed: {
+    baz () {
+      if (this.baf) {
+        return this.baf
+      }
+    },
+    baf: function () {}
+  }
+}
+&lt;/script&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>&lt;script&gt;
+export default {
+  computed: {
+    foo () {
+      if (this.bar) {
+        return this.baz
+      } else {
+        return this.baf
+      }
+    },
+    bar: function () {
+      return false
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre><h3 id="props&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x5E94;&#x8BE5;&#x662F;&#x6709;&#x6548;&#x7684;">props&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x5E94;&#x8BE5;&#x662F;&#x6709;&#x6548;&#x7684;</h3>
+<p>&#x53CD;&#x4F8B;</p>
+<pre><code>script&gt;
+export default {
+  props: {
+    propA: {
+      type: String,
+      default: {}
+    },
+    propB: {
+      type: String,
+      default: []
+    },
+    propC: {
+      type: Object,
+      default: []
+    },
+    propD: {
+      type: Array,
+      default: []
+    },
+    propE: {
+      type: Object,
+      default: { message: &apos;hello&apos; }
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre><p>&#x597D;&#x4F8B;&#x5B50;</p>
+<pre><code>script&gt;
+export default {
+  props: {
+    propA: Number,
+    propB: [String, Number],
+    propD: {
+      type: Number,
+      default: 100
+    },
+    // Array&#x548C;Object&#x7C7B;&#x578B;&#x7684;default&#x503C;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7C7B;&#x578B;&#x503C;&#x7684;&#x51FD;&#x6570;
+    propE: {
+      type: Object,
+      default() {
+        return { message: &apos;hello&apos; }
+      }
+    },
+    propF: {
+      type: Array,
+      default() {
+        return []
+      }
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="javascript开发规范.html" class="navigation navigation-prev " aria-label="Previous page: javascript开发规范">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="前端最佳实践.html" class="navigation navigation-next " aria-label="Next page: 前端最佳实践">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"vue开发规范","level":"1.3","depth":1,"next":{"title":"前端最佳实践","level":"1.4","depth":1,"path":"前端最佳实践.md","ref":"前端最佳实践.md","articles":[]},"previous":{"title":"javascript开发规范","level":"1.2","depth":1,"path":"javascript开发规范.md","ref":"javascript开发规范.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-plus","splitter","expandable-chapters","back-to-top-button","simple-page-toc","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"周瑜","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端开发规范","gitbook":"*"},"file":{"path":"vue开发规范.md","mtime":"2019-05-11T09:34:25.728Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-12T06:47:11.225Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

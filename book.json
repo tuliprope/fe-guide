@@ -1,0 +1,19 @@
+{
+    "title": "前端开发规范",
+    "author": "周瑜",
+    "plugins": [
+        "-search",
+        "search-plus",
+        "splitter",
+        "expandable-chapters",
+        "back-to-top-button",
+        "simple-page-toc",
+        "copy-code-button"
+    ],
+    "pluginsConfig": {
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        }
+    }
+}
